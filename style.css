@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: url(images/bg.png);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background-position: bottom;
+}
+
+.card {
+  width: 80%;
+  max-width: 600px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#task {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+}
+
+#task::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#add-task-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+/* Reduce spacing between checkbox and task text */
+.todo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  gap: 8px;
+}
+
+#tasks-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Left side (checkbox + text) */
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Icon buttons container */
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Icon buttons */
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transform: scale(1.1);
+  
+}
+
+.edit-icon {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* .delete-button {
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.2ch;
+  cursor: pointer;
+} */
+
+.delete-icon {
+  width: 18px;
+  height: 18px;
+  pointer-events: none; /* prevents click issues */
+}
+
+/* .icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+/* Hide default checkbox */
+.todo-left input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+/* Checked state */
+.todo-left input[type="checkbox"]:checked {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+/* White tick */
+.todo-left input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
